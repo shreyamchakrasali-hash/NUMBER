@@ -1,9 +1,6 @@
 import sys
 if (sys.argv)!= 3:
     print("Usage: python pythoncal.py <Integer1> <Integer2>")
-
-   
-else:
     integer1 = int(sys.argv[1])
     integer2 = int(sys.argv[2])
     print(f"Integer1 {integer1} and Integer2 {integer2}")
@@ -21,3 +18,5 @@ else:
         print(f"{integer2} is negative number")
     else:
         print(f"{integer2} is neither negative nor positive")
+else:
+    print("Invalid input")
