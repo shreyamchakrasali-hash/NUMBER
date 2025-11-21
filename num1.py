@@ -1,31 +1,34 @@
 import sys
 
-if len(sys.argv) == 3:
-    n1 = sys.argv[1]
-    n2 = sys.argv[2]
+# Default values
+default1 = 0
+default2 = 0
+
+if len(sys.argv) != 3:
+    print("Insufficient arguments provided.")
+    print("Usage: python pythoncal.py <Integer1> <Integer2>")
+    print(f"Using default values: {default1}, {default2}")
+
+    integer1 = default1
+    integer2 = default2
 else:
-    n1 = "5"
-    n2 = "-3"
+    integer1 = int(sys.argv[1])
+    integer2 = int(sys.argv[2])
 
-# Convert n1
-s1 = -1 if n1[0] == '-' else 1
-v1 = 0
-for c in n1[1:] if s1 == -1 else n1:
-    v1 = v1 * 10 + (ord(c) - 48)
-v1 *= s1
+print(f"Integer1 {integer1} and Integer2 {integer2}")
 
-# Convert n2
-s2 = -1 if n2[0] == '-' else 1
-v2 = 0
-for c in n2[1:] if s2 == -1 else n2:
-    v2 = v2 * 10 + (ord(c) - 48)
-v2 *= s2
-
-# ------- SIMPLE MAIN PART --------
-if v1 > 0 and v2 > 0:
-    print("Both Positive")
-elif v1 < 0 and v2 < 0:
-    print("Both Negative")
+# Check integer1
+if integer1 > 0:
+    print(f"{integer1} is a positive number")
+elif integer1 < 0:
+    print(f"{integer1} is a negative number")
 else:
-    print("Mixed")
-# ---------------------------------
+    print(f"{integer1} is neither negative nor positive")
+
+# Check integer2
+if integer2 > 0:
+    print(f"{integer2} is a positive number")
+elif integer2 < 0:
+    print(f"{integer2} is a negative number")
+else:
+    print(f"{integer2} is neither negative nor positive")
