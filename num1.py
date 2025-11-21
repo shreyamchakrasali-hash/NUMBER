@@ -1,22 +1,17 @@
 import sys
-if (sys.argv)!= 3:
-    print("Usage: python pythoncal.py <Integer1> <Integer2>")
-    integer1 = int(sys.argv[1])
-    integer2 = int(sys.argv[2])
-    print(f"Integer1 {integer1} and Integer2 {integer2}")
 
-    if integer1 > 0:
-        print(f"{integer1} is a positive number")
-    elif integer1 < 0:
-        print(f"{integer1} is negative number")
-    else:
-        print(f"{integer1} is neither negative or positive")
-    
-    if integer2 > 0:
-        print(f"{integer2} is a positive number")
-    elif integer2 < 0:
-        print(f"{integer2} is negative number")
-    else:
-        print(f"{integer2} is neither negative nor positive")
+# Default values
+num1 = 10
+num2 = -5
+
+# If command-line arguments are given, override the default values
+if len(sys.argv) > 2:
+    num1 = int(sys.argv[1])
+    num2 = int(sys.argv[2])
+
+if num1 > 0 and num2 > 0:
+    print("Both numbers are positive.")
+elif num1 < 0 and num2 < 0:
+    print("Both numbers are negative.")
 else:
-    print("Invalid input")
+    print("Numbers are mixed.")
