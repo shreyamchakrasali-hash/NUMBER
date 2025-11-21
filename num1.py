@@ -1,22 +1,31 @@
 import sys
-if (sys.argv)!= 3:
-    print("Usage: python pythoncal.py <Integer1> <Integer2>")
-    integer1 = int(sys.argv[1])
-    integer2 = int(sys.argv[2])
-    print(f"Integer1 {integer1} and Integer2 {integer2}")
 
-    if integer1 > 0:
-        print(f"{integer1} is a positive number")
-    elif integer1 < 0:
-        print(f"{integer1} is negative number")
-    else:
-        print(f"{integer1} is neither negative or positive")
-    
-    if integer2 > 0:
-        print(f"{integer2} is a positive number")
-    elif integer2 < 0:
-        print(f"{integer2} is negative number")
-    else:
-        print(f"{integer2} is neither negative nor positive")
+if len(sys.argv) == 3:
+    n1 = sys.argv[1]
+    n2 = sys.argv[2]
 else:
-    print("Invalid input")
+    n1 = "5"
+    n2 = "-3"
+
+# Convert n1
+s1 = -1 if n1[0] == '-' else 1
+v1 = 0
+for c in n1[1:] if s1 == -1 else n1:
+    v1 = v1 * 10 + (ord(c) - 48)
+v1 *= s1
+
+# Convert n2
+s2 = -1 if n2[0] == '-' else 1
+v2 = 0
+for c in n2[1:] if s2 == -1 else n2:
+    v2 = v2 * 10 + (ord(c) - 48)
+v2 *= s2
+
+# ------- SIMPLE MAIN PART --------
+if v1 > 0 and v2 > 0:
+    print("Both Positive")
+elif v1 < 0 and v2 < 0:
+    print("Both Negative")
+else:
+    print("Mixed")
+# ---------------------------------
